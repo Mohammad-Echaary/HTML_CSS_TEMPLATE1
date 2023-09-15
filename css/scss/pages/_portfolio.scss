@@ -1,0 +1,32 @@
+.portfolio {
+	@extend %padd;
+	background-color: #eee;
+	.container {
+		@include grid(300px, 3rem);
+		.box {
+			cursor: pointer;
+			position: relative;
+			@include prefixes(transition, 0.3s);
+			&:hover {
+				@include prefixes(translateY, -15px);
+			}
+			img {
+				height: 250px;
+				@include maxBreakPoint(sm) {
+					height: 280px;
+				}
+			}
+			.text {
+				padding: 2rem;
+				background-color: white;
+				h2 {
+					font-size: 2.3rem;
+					margin-bottom: 2rem;
+				}
+				p {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+}

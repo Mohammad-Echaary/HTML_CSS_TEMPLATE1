@@ -1,0 +1,14 @@
+.header {
+    margin: 5rem auto 8rem;
+    text-align: center;
+    font-size: 8rem;
+    letter-spacing: -1px;
+    font-weight: 900;
+    color: $title_color;
+    text-transform: capitalize;
+    p {
+        font-size: 2rem;
+        font-weight: 300;
+        margin-top: -3rem;
+    }
+}

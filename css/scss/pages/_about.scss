@@ -1,0 +1,74 @@
+.about {
+	@extend %padd;
+	.container {
+        position: relative;
+		@include breakPoint(sm){
+            @include gridCol(2);
+        }
+        align-items: center;
+		&::after {
+			@include absPseudo(-3rem, null, null, 0, 100px, calc(100% + 6rem), -1);
+			background-color: #dddbdb;
+			@include maxBreakPoint(sm) {
+				display: none;
+			}
+		}
+		.photo {
+			width: 350px;
+			@include breakPoint(m){
+				width: 100%;
+				margin-bottom: 3rem;
+			}
+			position: relative;
+			&::before {
+				@include absPseudo(-10%, -40px, null, null, 80px, 100%);
+				background-color: $main_color;
+			}
+			&::after {
+				@include absPseudo(null, -150px, 10%, null, 150px, 80px);
+				background-color: $main_color;
+			}
+			@include maxBreakPoint(sm) {
+				&::before,
+				&::after {
+					display: none;
+				}
+			}
+			img {
+				display: block;
+				width: 90%;
+				margin-left: auto;
+                z-index: 3;
+                position: relative;
+				@include breakPoint(m) {
+					width: 100%;
+				}
+			}
+			.box {
+				flex-basis: 40%;
+				p {
+					@include maxBreakPoint(sm) {
+						text-align: center;
+					}
+					&:first-child {
+						font-weight: 700;
+					}
+					&:last-child {
+						font-weight: 300;
+					}
+				}
+				span {
+					display: block;
+					width: 70%;
+					height: 2px;
+					background-color: $main_color;
+					margin: 4rem 0;
+					@include maxBreakPoint(sm) {
+						margin-left: auto;
+						margin-right: auto;
+					}
+				}
+			}
+		}
+	}
+}

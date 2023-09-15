@@ -1,0 +1,64 @@
+header {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	.container {
+		@include flex();
+		.menu {
+			position: relative;
+			z-index: 4;
+			.bar {
+				padding: 0.6rem;
+				transition: 0.3s;
+				cursor: pointer;
+				>i {
+					color: black;
+				}
+				&.active {
+					background-color: $main_color;
+					i {
+						color: white;
+					}
+				}
+			}
+			.list {
+				display: none;
+				@include abs(calc(100% + 15px), 0);
+				background-color: $main_color;
+				box-shadow: 1px 1px 15px 0 var(--text_color);
+				&::before {
+					@include arrow(
+						-24px,
+						8px,
+						null,
+						null,
+						12px,
+						transparent,
+						transparent,
+                        $main_color,
+						transparent
+					);
+					cursor: pointer;
+				}
+				li {
+					&:not(:last-child) {
+						border-bottom: 1px solid #d7d6d6;
+					}
+					a {
+						padding: 13px;
+						width: 300px;
+						cursor: pointer;
+						color: white;
+						@include prefixes(transition, 0.3s);
+						font-size: 2rem;
+						&:hover {
+							@include prefixes(transform, translateX(10px));
+						}
+					}
+				}
+				&.active {
+					display: block;
+				}
+			}
+		}
+	}
+}

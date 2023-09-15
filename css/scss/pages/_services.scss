@@ -1,0 +1,48 @@
+.services {
+	@extend %padd;
+	.container {
+		@include grid(300px, 3rem);
+		.box .part {
+			display: flex;
+			gap: 4rem;
+			margin-bottom: 3.5rem;
+			@include breakPoint(m) {
+				flex-direction: column;
+				text-align: center;
+				box-shadow: 1px 1px 15px 0 var $text_color;
+				padding: 4rem 2rem;
+			}
+			h2 {
+				font-size: 2.1rem;
+				margin-bottom: 2.3rem;
+			}
+			p {
+				font-size: 1.5rem;
+				@include breakPoint(sm) {
+					line-height: 1.3;
+				}
+			}
+		}
+		.photo {
+			position: relative;
+			@include breakPoint(m) {
+				display: none;
+			}
+			&::after {
+				@include abs(-4rem, 0, null, null, -1);
+				content: '';
+				width: 30%;
+				height: calc(100% + 8rem);
+				background-color: $back_color;
+				@include maxBreakPoint(sm) {
+					display: none;
+				}
+			}
+			img {
+				@include breakPoint(md) {
+					width: 90%;
+				}
+			}
+		}
+	}
+}

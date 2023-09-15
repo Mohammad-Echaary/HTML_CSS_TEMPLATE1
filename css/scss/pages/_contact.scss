@@ -1,0 +1,19 @@
+.contact {
+    @extend %padd;
+    background-color: #eee;
+    .text {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        text-align: center;
+        h1 {
+            color: $back_color;
+            font-size: 3.5rem;
+        }
+        h2 {
+            font-size: 3rem;
+            color: $main_color;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+    }
+}

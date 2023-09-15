@@ -1,0 +1,11 @@
+footer {
+    font-size: 2.3rem;
+    background-color: $back_color;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    span {
+        color: $main_color;
+        font-weight: 500;
+    }
+}
